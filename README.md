@@ -11,12 +11,12 @@ To make Data Mesh simple, Open Source and available to all; without vendor lock-
 - Running OTS infrastructure like connectors and all things, webservices, microservices or processors…. They are the problem of the client, not the Mesh itself. 
 
 ### Problem Statement:
-- Everyone is touting data mesh as the next big thing and throwing lots of tech at it; and it’s getting confusing, many bespoke, many commercial solutions… it should be accessible & simple, without lock-in
+- Everyone is touting Data Mesh as the next big thing and throwing lots of tech at it; and it’s getting confusing, many bespoke, many commercial solutions… it should be accessible & simple, without lock-in
 - We see Data Mesh as a natural, formalisation of building the Central Nervous System (CNS) (everything via streams of topic data)
-- CNS has exited for many years and implemented by some of the largest organisations in the world
-- CNS focuses on streams-of-events (Kafka topics), but during implementation includes most of the guiding principles of Datamesh (ownership by domain, as-a-product, self-service, governance)
+- CNS has existed for many years and implemented by some of the largest organisations in the world
+- CNS focuses on streams-of-events (Kafka topics), but during implementation includes most of the guiding principles of Data mesh (ownership by domain, as-a-product, self-service, governance)
 - We should strive to avoid vendor lock-in (doesn't need to be all encompassing and conflict with existing data infra)
-- Most data-mesh solutions don't provide SDLC/development tools for test and infrastructure. Data-Ops and Testing is the last thing vendors consider. 
+- Most Data Mesh solutions don't provide SDLC/development tools for test and infrastructure. Data-Ops and Testing is the last thing vendors consider. 
 
 ### What
 - [Specifications](https://www.asyncapi.com/) are used to define the data-product, the domain model and drive resource provisioning; they are the sharing contract with the org.
@@ -25,7 +25,7 @@ To make Data Mesh simple, Open Source and available to all; without vendor lock-
 - Provisioning of data resources (data-ops) via build-plugin + specifications fixes the Kafka resource mess/grave-yard. Resources have clearly identified ownership through the use of the *root.id* attribute. (Terraform)
 - Testing support. SpecMesh includes full developer SDLC through Gradle (Java) and PyTest (Python). Unlike most products, this includes UnitTesting, localised, data resource provisioning (TestContainers) as well as during build-pipeline execution. DataOps and testing should be automated!
 - Repeatability -> provides guard-rails, reuse, reliable, simple and consistent approach for all
-- Specifications are published to a searchable Off-The-Shelf (OTS) DataCatalogue and automation plugins are used to incorporate self-service governance and access control. 
+- Specifications are published to a searchable Off-The-Shelf (OTS) Data Catalogue and automation plugins are used to incorporate self-service governance and access control. 
 - Specification tags are injected into the associated environments Data Catalogue when the spec is promoted through the build pipeline, to aid discoverability. 
 - - Not just Kafka and Storage, but eventually Kinesis, G PubSub, EventHubs, S3, from OnPrem to Cloud, multiple envs, clusters etc
 
