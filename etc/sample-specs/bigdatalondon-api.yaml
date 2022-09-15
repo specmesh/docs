@@ -1,0 +1,71 @@
+asyncapi: '2.4.0'
+id: 'urn:bigdatalondon:2022'
+
+info:
+  title: BigDataLondon API
+  version: '1.0.0'
+  description: |
+    Simple model of BigDataLondon as a Data Product
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+
+servers:
+  test:
+    url: test.mykafkacluster.org:8092
+    protocol: kafka-secure
+    description: Test broker
+
+channels:
+  public/transport/airport:
+    publish:
+      summary: Humans leaving the event
+      message:
+        name: Human
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the human
+            age:
+              type: integer
+              minimum: 0
+              description: Age of the human
+  public/accomodation/hotel:
+    publish:
+      summary: Humans staying at the event
+      message:
+        name: Human
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the human
+            age:
+              type: integer
+              minimum: 0
+              description: Age of the human
+  private/retail/nandos:
+    publish:
+      summary: Humans purchasing food from nandos
+      message:
+        name: Food Item
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the food
+            cost:
+              type: number
+              minimum: 0
+              description: GBP cost of the food item
+            human_id:
+              type: integer
+              minimum: 0
+              description: Id of the human purchasing the food
