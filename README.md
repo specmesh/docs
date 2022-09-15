@@ -1,5 +1,7 @@
 # specmesh
 
+![specmesh-logo-400](https://user-images.githubusercontent.com/71075996/190342554-e0d8cd5d-7025-41fe-910e-665e91438c6b.png)
+
 ### Specification driven data mesh for the enterprise
 
 **Goal**: 
