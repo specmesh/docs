@@ -1,5 +1,5 @@
 asyncapi: '2.4.0'
-id: 'urn:bigdatalondon:2022'
+id: 'urn:london:hammersmith:olympia:bigdatalondon'
 
 info:
   title: BigDataLondon API
@@ -17,11 +17,15 @@ servers:
     description: Test broker
 
 channels:
-  public/transport/airport:
+  public/attendee:
     publish:
-      summary: Humans leaving the event
+      summary: Humans arriving
       message:
         name: Human
+        "tags": [
+          "name": "human",
+          "name": "big data london"
+        ]
         payload:
           type: object
           properties:
@@ -33,27 +37,15 @@ channels:
               type: integer
               minimum: 0
               description: Age of the human
-  public/accomodation/hotel:
+  protected/retail/subway/food/purchase:
     publish:
-      summary: Humans staying at the event
-      message:
-        name: Human
-        payload:
-          type: object
-          properties:
-            id:
-              type: integer
-              minimum: 0
-              description: Id of the human
-            age:
-              type: integer
-              minimum: 0
-              description: Age of the human
-  private/retail/nandos:
-    publish:
-      summary: Humans purchasing food from nandos
+      summary: Humans purchasing food
       message:
         name: Food Item
+        "tags": [
+          "name": "human",
+          "name": "purchase"
+        ]
         payload:
           type: object
           properties:
@@ -69,3 +61,20 @@ channels:
               type: integer
               minimum: 0
               description: Id of the human purchasing the food
+
+  /london/hammersmith/transport/public/tube:
+    subscribe:
+      summary: Humans arriving in the borough
+      message:
+        name: Human
+        payload:
+          type: object
+          properties:
+            id:
+              type: integer
+              minimum: 0
+              description: Id of the human
+            age:
+              type: integer
+              minimum: 0
+              description: Age of the human
