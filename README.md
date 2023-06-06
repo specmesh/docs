@@ -1,3 +1,3 @@
 - Wiki: https://github.com/specmesh/docs/wiki
-- - Main site: https://github.com/specmesh/site
+- Main site: https://github.com/specmesh/site
 - Source code: https://github.com/specmesh/specmesh-build
